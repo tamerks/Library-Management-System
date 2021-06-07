@@ -24,10 +24,10 @@ namespace MyLibrary
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /* string user = txtUserName.Text;
+             string user = txtUserName.Text;
              string password = txtPassword.Text;
 
-             com = new SqlCommand();
+            /* com = new SqlCommand();
              try
              {
                  con.Open();
@@ -55,7 +55,7 @@ namespace MyLibrary
              else
                  MessageBox.Show("hatalı giriş");
 
-             con.Close();       */
+             con.Close();   */    
             Form2 form = new Form2();
             //this.Hide();
             form.ShowDialog();

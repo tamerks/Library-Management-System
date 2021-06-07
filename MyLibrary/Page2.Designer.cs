@@ -40,6 +40,9 @@ namespace MyLibrary
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.AUTHOR_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AUTHOR_SURNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AUTHOR_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.txtAutID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +89,7 @@ namespace MyLibrary
             this.button1.TabIndex = 4;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // button2
             // 
@@ -97,7 +100,7 @@ namespace MyLibrary
             this.button2.TabIndex = 5;
             this.button2.Text = "Search";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // button3
             // 
@@ -110,6 +113,7 @@ namespace MyLibrary
             this.button3.TabIndex = 12;
             this.button3.Text = "Delete Book";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label3
             // 
@@ -128,12 +132,14 @@ namespace MyLibrary
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AUTHOR_NAME,
-            this.AUTHOR_SURNAME});
+            this.AUTHOR_SURNAME,
+            this.AUTHOR_ID});
             this.dataGridView1.Location = new System.Drawing.Point(266, 40);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(241, 173);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // AUTHOR_NAME
             // 
@@ -147,10 +153,37 @@ namespace MyLibrary
             this.AUTHOR_SURNAME.HeaderText = "Author Surname";
             this.AUTHOR_SURNAME.Name = "AUTHOR_SURNAME";
             // 
+            // AUTHOR_ID
+            // 
+            this.AUTHOR_ID.DataPropertyName = "AUTHOR_ID";
+            this.AUTHOR_ID.HeaderText = "Author ID";
+            this.AUTHOR_ID.Name = "AUTHOR_ID";
+            this.AUTHOR_ID.Visible = false;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(89, 159);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 15;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // txtAutID
+            // 
+            this.txtAutID.Location = new System.Drawing.Point(133, 206);
+            this.txtAutID.Name = "txtAutID";
+            this.txtAutID.Size = new System.Drawing.Size(100, 23);
+            this.txtAutID.TabIndex = 16;
+            this.txtAutID.Visible = false;
+            // 
             // Page2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtAutID);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button3);
@@ -180,7 +213,10 @@ namespace MyLibrary
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn AUTHOR_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn AUTHOR_SURNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AUTHOR_ID;
+        private System.Windows.Forms.TextBox txtAutID;
     }
 }

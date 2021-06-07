@@ -43,6 +43,9 @@ namespace MyLibrary
             this.PUBLISHER_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PUBLISHER_ADRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PUBLISHER_PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PUBLISHER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPublisherID = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +60,7 @@ namespace MyLibrary
             this.button3.TabIndex = 20;
             this.button3.Text = "Delete Book";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // button2
             // 
@@ -67,7 +71,7 @@ namespace MyLibrary
             this.button2.TabIndex = 18;
             this.button2.Text = "Search";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // button1
             // 
@@ -78,7 +82,7 @@ namespace MyLibrary
             this.button1.TabIndex = 17;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // textBox2
             // 
@@ -148,12 +152,14 @@ namespace MyLibrary
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PUBLISHER_NAME,
             this.PUBLISHER_ADRESS,
-            this.PUBLISHER_PHONE});
+            this.PUBLISHER_PHONE,
+            this.PUBLISHER_ID});
             this.dataGridView1.Location = new System.Drawing.Point(246, 69);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(295, 159);
             this.dataGridView1.TabIndex = 24;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // PUBLISHER_NAME
             // 
@@ -173,10 +179,37 @@ namespace MyLibrary
             this.PUBLISHER_PHONE.HeaderText = "Publisher Phone";
             this.PUBLISHER_PHONE.Name = "PUBLISHER_PHONE";
             // 
+            // PUBLISHER_ID
+            // 
+            this.PUBLISHER_ID.DataPropertyName = "PUBLISHER_ID";
+            this.PUBLISHER_ID.HeaderText = "Publisher ID";
+            this.PUBLISHER_ID.Name = "PUBLISHER_ID";
+            this.PUBLISHER_ID.Visible = false;
+            // 
+            // txtPublisherID
+            // 
+            this.txtPublisherID.Location = new System.Drawing.Point(130, 246);
+            this.txtPublisherID.Name = "txtPublisherID";
+            this.txtPublisherID.Size = new System.Drawing.Size(100, 23);
+            this.txtPublisherID.TabIndex = 25;
+            this.txtPublisherID.Visible = false;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(86, 213);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(90, 23);
+            this.btnUpdate.TabIndex = 26;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // Page3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.txtPublisherID);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
@@ -213,5 +246,8 @@ namespace MyLibrary
         private System.Windows.Forms.DataGridViewTextBoxColumn PUBLISHER_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn PUBLISHER_ADRESS;
         private System.Windows.Forms.DataGridViewTextBoxColumn PUBLISHER_PHONE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PUBLISHER_ID;
+        private System.Windows.Forms.TextBox txtPublisherID;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

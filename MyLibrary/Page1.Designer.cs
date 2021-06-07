@@ -44,9 +44,19 @@ namespace MyLibrary
             this.comboxLan = new System.Windows.Forms.ComboBox();
             this.comboxCategory = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BOOK_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BOOK_PAGE_COUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CATEGORY_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AUTHOR_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AUTHOR_SURNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BOOK_ISBN_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LANGUAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BOOK_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtAutName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtAutSurname = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.txtBookID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,6 +151,7 @@ namespace MyLibrary
             this.button2.TabIndex = 11;
             this.button2.Text = "Delete Book";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // button3
             // 
@@ -151,6 +162,7 @@ namespace MyLibrary
             this.button3.TabIndex = 12;
             this.button3.Text = "Search";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label6
             // 
@@ -164,12 +176,15 @@ namespace MyLibrary
             // comboxLan
             // 
             this.comboxLan.FormattingEnabled = true;
+            this.comboxLan.Items.AddRange(new object[] {
+            "tr",
+            "eng",
+            "fr"});
             this.comboxLan.Location = new System.Drawing.Point(87, 235);
             this.comboxLan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboxLan.Name = "comboxLan";
             this.comboxLan.Size = new System.Drawing.Size(133, 23);
             this.comboxLan.TabIndex = 15;
-            this.comboxLan.Click += new System.EventHandler(this.comboxLan_Click);
             // 
             // comboxCategory
             // 
@@ -179,17 +194,75 @@ namespace MyLibrary
             this.comboxCategory.Name = "comboxCategory";
             this.comboxCategory.Size = new System.Drawing.Size(133, 23);
             this.comboxCategory.TabIndex = 17;
-            this.comboxCategory.SelectedIndexChanged += new System.EventHandler(this.comboxCategory_SelectedIndexChanged);
             this.comboxCategory.Click += new System.EventHandler(this.comboxCategory_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BOOK_NAME,
+            this.BOOK_PAGE_COUNT,
+            this.CATEGORY_NAME,
+            this.AUTHOR_NAME,
+            this.AUTHOR_SURNAME,
+            this.BOOK_ISBN_NO,
+            this.LANGUAGE,
+            this.BOOK_ID});
             this.dataGridView1.Location = new System.Drawing.Point(226, 13);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(315, 225);
             this.dataGridView1.TabIndex = 18;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // BOOK_NAME
+            // 
+            this.BOOK_NAME.DataPropertyName = "BOOK_NAME";
+            this.BOOK_NAME.HeaderText = "Book Name";
+            this.BOOK_NAME.Name = "BOOK_NAME";
+            // 
+            // BOOK_PAGE_COUNT
+            // 
+            this.BOOK_PAGE_COUNT.DataPropertyName = "BOOK_PAGE_COUNT";
+            this.BOOK_PAGE_COUNT.HeaderText = "Page count";
+            this.BOOK_PAGE_COUNT.Name = "BOOK_PAGE_COUNT";
+            // 
+            // CATEGORY_NAME
+            // 
+            this.CATEGORY_NAME.DataPropertyName = "CATEGORY_NAME";
+            this.CATEGORY_NAME.HeaderText = "Category";
+            this.CATEGORY_NAME.Name = "CATEGORY_NAME";
+            // 
+            // AUTHOR_NAME
+            // 
+            this.AUTHOR_NAME.DataPropertyName = "AUTHOR_NAME";
+            this.AUTHOR_NAME.HeaderText = "Author Name";
+            this.AUTHOR_NAME.Name = "AUTHOR_NAME";
+            // 
+            // AUTHOR_SURNAME
+            // 
+            this.AUTHOR_SURNAME.DataPropertyName = "AUTHOR_SURNAME";
+            this.AUTHOR_SURNAME.HeaderText = "Author Surname";
+            this.AUTHOR_SURNAME.Name = "AUTHOR_SURNAME";
+            // 
+            // BOOK_ISBN_NO
+            // 
+            this.BOOK_ISBN_NO.DataPropertyName = "BOOK_ISBN_NO";
+            this.BOOK_ISBN_NO.HeaderText = "ISBN NO";
+            this.BOOK_ISBN_NO.Name = "BOOK_ISBN_NO";
+            // 
+            // LANGUAGE
+            // 
+            this.LANGUAGE.DataPropertyName = "LANGUAGE";
+            this.LANGUAGE.HeaderText = "Language";
+            this.LANGUAGE.Name = "LANGUAGE";
+            // 
+            // BOOK_ID
+            // 
+            this.BOOK_ID.DataPropertyName = "BOOK_ID";
+            this.BOOK_ID.HeaderText = "Book ID";
+            this.BOOK_ID.Name = "BOOK_ID";
+            this.BOOK_ID.Visible = false;
             // 
             // txtAutName
             // 
@@ -214,10 +287,30 @@ namespace MyLibrary
             this.txtAutSurname.Size = new System.Drawing.Size(110, 23);
             this.txtAutSurname.TabIndex = 21;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(56, 311);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(104, 23);
+            this.btnUpdate.TabIndex = 22;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // txtBookID
+            // 
+            this.txtBookID.Location = new System.Drawing.Point(317, 282);
+            this.txtBookID.Name = "txtBookID";
+            this.txtBookID.Size = new System.Drawing.Size(100, 23);
+            this.txtBookID.TabIndex = 23;
+            this.txtBookID.Visible = false;
+            // 
             // Page1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtBookID);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtAutSurname);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtAutName);
@@ -266,5 +359,15 @@ namespace MyLibrary
         private System.Windows.Forms.TextBox txtAutName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtAutSurname;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox txtBookID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BOOK_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BOOK_PAGE_COUNT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CATEGORY_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AUTHOR_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AUTHOR_SURNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BOOK_ISBN_NO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LANGUAGE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BOOK_ID;
     }
 }
