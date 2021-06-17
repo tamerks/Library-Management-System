@@ -1,7 +1,7 @@
 ﻿
 namespace MyLibrary
 {
-    partial class Page3
+    partial class Publisher
     {
         /// <summary> 
         /// Required designer variable.
@@ -188,7 +188,7 @@ namespace MyLibrary
             // 
             // txtPublisherID
             // 
-            this.txtPublisherID.Location = new System.Drawing.Point(130, 246);
+            this.txtPublisherID.Location = new System.Drawing.Point(282, 159);
             this.txtPublisherID.Name = "txtPublisherID";
             this.txtPublisherID.Size = new System.Drawing.Size(100, 23);
             this.txtPublisherID.TabIndex = 25;
@@ -204,12 +204,12 @@ namespace MyLibrary
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // Page3
+            // Publisher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(553, 284);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.txtPublisherID);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
@@ -221,9 +221,9 @@ namespace MyLibrary
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtPublisherID);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Page3";
-            this.Size = new System.Drawing.Size(550, 338);
+            this.Name = "Publisher";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

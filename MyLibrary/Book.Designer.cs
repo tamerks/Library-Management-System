@@ -1,7 +1,7 @@
 ﻿
 namespace MyLibrary
 {
-    partial class Page1
+    partial class Book
     {
         /// <summary> 
         /// Required designer variable.
@@ -299,17 +299,17 @@ namespace MyLibrary
             // 
             // txtBookID
             // 
-            this.txtBookID.Location = new System.Drawing.Point(317, 282);
+            this.txtBookID.Location = new System.Drawing.Point(308, 152);
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.Size = new System.Drawing.Size(100, 23);
             this.txtBookID.TabIndex = 23;
             this.txtBookID.Visible = false;
             // 
-            // Page1
+            // Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtBookID);
+            this.ClientSize = new System.Drawing.Size(552, 340);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtAutSurname);
             this.Controls.Add(this.label7);
@@ -329,10 +329,9 @@ namespace MyLibrary
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtBookID);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Page1";
-            this.Size = new System.Drawing.Size(550, 338);
-            this.Load += new System.EventHandler(this.Page1_Load);
+            this.Name = "Book";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

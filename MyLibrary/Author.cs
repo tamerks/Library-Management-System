@@ -7,15 +7,14 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-
 namespace MyLibrary
 {
-    public partial class Page2 : UserControl
+    public partial class Author : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=PC;Initial Catalog=MyVisualLibrary;Integrated Security=True");
         SqlCommand com = new SqlCommand();
 
-        public Page2()
+        public Author()
         {
             InitializeComponent();
         }
@@ -23,7 +22,7 @@ namespace MyLibrary
         //add author
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(isEmpty() == 0)
+            if (isEmpty() == 0)
             {
                 string autName = textBox1.Text;
                 string autSurName = textBox2.Text;
@@ -44,15 +43,15 @@ namespace MyLibrary
 
                     throw new Exception(ex.Message);
                 }
-            }           
+            }
 
-        }       
+        }
 
         //search author
         private void btnSearch_Click(object sender, EventArgs e)
-        {            
+        {
             try
-            {                
+            {
                 con.Open();
                 com.Connection = con;
                 com.CommandText = "Select * From dbo.AUTHOR where AUTHOR_NAME='" + textBox1.Text + "'";
@@ -65,8 +64,8 @@ namespace MyLibrary
             catch (SqlException ex)
             {
                 throw new Exception(ex.Message);
-            }        
-            
+            }
+
             con.Close();
 
         }
@@ -76,14 +75,14 @@ namespace MyLibrary
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
             txtAutID.Text = row.Cells[0].Value.ToString(); //Get data's ID from database to this unvisible textbox          
             textBox1.Text = row.Cells[1].Value.ToString();
-            textBox2.Text = row.Cells[2].Value.ToString();           
-                      
+            textBox2.Text = row.Cells[2].Value.ToString();
+
         }
 
         //update author
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(isEmpty() == 0)
+            if (isEmpty() == 0)
             {
                 try
                 {
@@ -100,7 +99,7 @@ namespace MyLibrary
                     throw new Exception(ex.Message);
                 }
                 con.Close();
-            }            
+            }
         }
 
         private int isEmpty()
@@ -113,7 +112,7 @@ namespace MyLibrary
             }
             return flag;
         }
-        
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try

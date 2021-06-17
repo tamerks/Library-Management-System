@@ -1,5 +1,4 @@
-﻿
-namespace MyLibrary
+﻿namespace MyLibrary
 {
     partial class Form2
     {
@@ -30,29 +29,40 @@ namespace MyLibrary
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPersonel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.page11 = new MyLibrary.Page1();
-            this.page31 = new MyLibrary.Page3();
-            this.page21 = new MyLibrary.Page2();
+            this.btnMember = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnMember);
+            this.panel2.Controls.Add(this.btnPersonel);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(172, 450);
+            this.panel2.Size = new System.Drawing.Size(690, 407);
             this.panel2.TabIndex = 1;
+            // 
+            // btnPersonel
+            // 
+            this.btnPersonel.Location = new System.Drawing.Point(525, 80);
+            this.btnPersonel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPersonel.Name = "btnPersonel";
+            this.btnPersonel.Size = new System.Drawing.Size(150, 56);
+            this.btnPersonel.TabIndex = 4;
+            this.btnPersonel.Text = "Personel";
+            this.btnPersonel.UseVisualStyleBackColor = true;
+            this.btnPersonel.Click += new System.EventHandler(this.btnPersonel_Click);
             // 
             // label1
             // 
@@ -60,17 +70,18 @@ namespace MyLibrary
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(21, 24);
+            this.label1.Location = new System.Drawing.Point(18, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 35);
+            this.label1.Size = new System.Drawing.Size(115, 28);
             this.label1.TabIndex = 3;
             this.label1.Text = "My Library";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(0, 186);
+            this.button2.Location = new System.Drawing.Point(173, 80);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 74);
+            this.button2.Size = new System.Drawing.Size(150, 56);
             this.button2.TabIndex = 0;
             this.button2.Text = "Publisher";
             this.button2.UseVisualStyleBackColor = true;
@@ -78,9 +89,10 @@ namespace MyLibrary
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(0, 266);
+            this.button3.Location = new System.Drawing.Point(346, 80);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(172, 74);
+            this.button3.Size = new System.Drawing.Size(150, 56);
             this.button3.TabIndex = 2;
             this.button3.Text = "Author";
             this.button3.UseVisualStyleBackColor = true;
@@ -88,62 +100,37 @@ namespace MyLibrary
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 106);
+            this.button1.Location = new System.Drawing.Point(0, 80);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 74);
+            this.button1.Size = new System.Drawing.Size(150, 56);
             this.button1.TabIndex = 0;
             this.button1.Text = "Book";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel1
+            // btnMember
             // 
-            this.panel1.Controls.Add(this.page21);
-            this.panel1.Controls.Add(this.page31);
-            this.panel1.Controls.Add(this.page11);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(172, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(628, 450);
-            this.panel1.TabIndex = 2;
-            // 
-            // page11
-            // 
-            this.page11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.page11.Location = new System.Drawing.Point(0, 0);
-            this.page11.Name = "page11";
-            this.page11.Size = new System.Drawing.Size(628, 450);
-            this.page11.TabIndex = 0;
-            this.page11.Load += new System.EventHandler(this.page11_Load);
-            // 
-            // page31
-            // 
-            this.page31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.page31.Location = new System.Drawing.Point(0, 0);
-            this.page31.Name = "page31";
-            this.page31.Size = new System.Drawing.Size(628, 450);
-            this.page31.TabIndex = 1;
-            // 
-            // page21
-            // 
-            this.page21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.page21.Location = new System.Drawing.Point(0, 0);
-            this.page21.Name = "page21";
-            this.page21.Size = new System.Drawing.Size(628, 450);
-            this.page21.TabIndex = 2;
+            this.btnMember.Location = new System.Drawing.Point(0, 152);
+            this.btnMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMember.Name = "btnMember";
+            this.btnMember.Size = new System.Drawing.Size(150, 56);
+            this.btnMember.TabIndex = 5;
+            this.btnMember.Text = "Member";
+            this.btnMember.UseVisualStyleBackColor = true;
+            this.btnMember.Click += new System.EventHandler(this.btnMember_Click);
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(702, 407);
             this.Controls.Add(this.panel2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -154,9 +141,7 @@ namespace MyLibrary
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
-        private Page1 page11;
-        private Page2 page21;
-        private Page3 page31;
+        private System.Windows.Forms.Button btnPersonel;
+        private System.Windows.Forms.Button btnMember;
     }
 }

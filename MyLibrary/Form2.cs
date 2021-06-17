@@ -30,7 +30,7 @@ namespace MyLibrary
             catch (SqlException ex)
             {
 
-                throw new Exception(ex.Message + "here");
+                throw new Exception(ex.Message + "Something went wrong with database");
             }
             com.Connection = con;            
 
@@ -44,20 +44,34 @@ namespace MyLibrary
         //book
         private void button1_Click(object sender, EventArgs e)
         {
-            page11.BringToFront();
+            Book book = new Book();
+            book.ShowDialog();
         }
 
         //publisher
         private void button2_Click(object sender, EventArgs e)
         {
-            page31.BringToFront();
+            Publisher publisher = new Publisher();
+            publisher.ShowDialog();
         }
 
         //author
         private void button3_Click(object sender, EventArgs e)
         {
-            page21.BringToFront();
+            Author author = new Author();
+            author.ShowDialog();
         }
 
+        private void btnPersonel_Click(object sender, EventArgs e)
+        {
+            Personel personel = new Personel();
+            personel.ShowDialog();
+        }
+
+        private void btnMember_Click(object sender, EventArgs e)
+        {
+            Member member = new Member();
+            member.ShowDialog();
+        }
     }
 }

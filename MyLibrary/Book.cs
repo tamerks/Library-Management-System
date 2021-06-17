@@ -9,22 +9,17 @@ using System.Windows.Forms;
 
 namespace MyLibrary
 {
-    public partial class Page1 : UserControl
+    public partial class Book : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=PC;Initial Catalog=MyVisualLibrary;Integrated Security=True");
         SqlCommand com = new SqlCommand();
-        SqlDataReader dr, dr2;       
-                
+        SqlDataReader dr, dr2;
 
-        public Page1()
+
+        public Book()
         {
             InitializeComponent();
-        }
-
-        private void Page1_Load(object sender, EventArgs e)
-        {
-            
-        }
+        }     
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
@@ -81,8 +76,6 @@ namespace MyLibrary
                         com.Parameters.Clear();
 
                     }
-
-
                 }
                 catch (Exception ex)
                 {
@@ -91,13 +84,11 @@ namespace MyLibrary
                 }
 
                 con.Close();
-            }                   
-            
-
-        }      
+            }
+        }
 
         private void comboxCategory_Click(object sender, EventArgs e)
-        {            
+        {
             con.Open();
             com.Connection = con;
             com.CommandText = "select CATEGORY_NAME from dbo.CATEGORY";
@@ -110,7 +101,7 @@ namespace MyLibrary
 
             dr.Close();
             con.Close();
-        }       
+        }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -166,8 +157,8 @@ namespace MyLibrary
                 }
 
                 con.Close();
-            }         
-            
+            }
+
         }
 
         //search        
@@ -175,12 +166,12 @@ namespace MyLibrary
         {
             try
             {
-                con.Open();             
+                con.Open();
                 com.Connection = con;
                 com.CommandText = @"select BOOK_ID,BOOK_NAME,BOOK_PAGE_COUNT,CATEGORY_NAME,AUTHOR_NAME,AUTHOR_SURNAME,BOOK_ISBN_NO,LANGUAGE from dbo.BOOK as b 
                                     inner join dbo.AUTHOR as a on b.AUTHOR_ID = a.AUTHOR_ID
                                     inner join dbo.CATEGORY as c on b.CATEGORY_ID = c.CATEGORY_ID
-                                    where b.BOOK_NAME ='"+ txtBook.Text +"'";
+                                    where b.BOOK_NAME ='" + txtBook.Text + "'";
                 SqlDataAdapter da = new SqlDataAdapter(com.CommandText, con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -194,7 +185,7 @@ namespace MyLibrary
             }
             con.Close();
         }
-        
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
@@ -221,9 +212,9 @@ namespace MyLibrary
                txtBook.Text == string.Empty || txtAutName.Text == string.Empty || txtAutSurname.Text == string.Empty || txtISBN.Text == string.Empty || txtPageCount.Text == string.Empty || txtISBN.Text == string.Empty)
             {
                 flag = 1;
-                MessageBox.Show("There are empty fields.Please fill in the blank properties!!");                
+                MessageBox.Show("There are empty fields.Please fill in the blank properties!!");
             }
-            
+
             return flag;
         }
 

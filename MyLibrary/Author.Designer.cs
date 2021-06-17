@@ -1,8 +1,9 @@
 ﻿
 namespace MyLibrary
 {
-    partial class Page2
+    partial class Author
     {
+
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -111,7 +112,7 @@ namespace MyLibrary
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(82, 22);
             this.button3.TabIndex = 12;
-            this.button3.Text = "Delete Book";
+            this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -178,10 +179,11 @@ namespace MyLibrary
             this.txtAutID.TabIndex = 16;
             this.txtAutID.Visible = false;
             // 
-            // Page2
+            // Author
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(534, 299);
             this.Controls.Add(this.txtAutID);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dataGridView1);
@@ -194,8 +196,7 @@ namespace MyLibrary
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Page2";
-            this.Size = new System.Drawing.Size(550, 338);
+            this.Name = "Author";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

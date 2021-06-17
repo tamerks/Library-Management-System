@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace MyLibrary
 {
-    public partial class Page3 : UserControl
+    public partial class Publisher : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=PC;Initial Catalog=MyVisualLibrary;Integrated Security=True");
         SqlCommand com = new SqlCommand();
 
-        public Page3()
+        public Publisher()
         {
             InitializeComponent();
-        }              
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(isEmpty() == 0)
+            if (isEmpty() == 0)
             {
                 string pubName = textBox1.Text;
                 string pubAdress = textBox2.Text;
@@ -46,12 +46,12 @@ namespace MyLibrary
                 }
 
                 con.Close();
-            }            
-        }       
-        
+            }
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
                 con.Open();
@@ -68,7 +68,7 @@ namespace MyLibrary
             }
 
             con.Close();
-                       
+
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -116,7 +116,7 @@ namespace MyLibrary
             textBox1.Text = row.Cells[1].Value.ToString();
             textBox2.Text = row.Cells[2].Value.ToString();
             textBox3.Text = row.Cells[3].Value.ToString();
-        }       
+        }
 
         private int isEmpty()
         {
@@ -124,7 +124,7 @@ namespace MyLibrary
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox1.Text == string.Empty || textBox2.Text == string.Empty || textBox3.Text == string.Empty)
             {
                 flag = 1;
-                MessageBox.Show("There are empty fields.Please fill in the blank properties!!");                
+                MessageBox.Show("There are empty fields.Please fill in the blank properties!!");
             }
             return flag;
         }

@@ -62,10 +62,22 @@ namespace MyLibrary
             
 
         }
+               
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            LoginMember loginMember = new LoginMember();
+            this.Hide();
+            loginMember.ShowDialog();
+            
+        }
 
+        private void SignUpLinkButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Member member = new Member();
+            this.Hide();
+            member.ShowDialog();
+            
         }
     }
 }
